@@ -9,14 +9,26 @@
 </head>
 <body>
     
+    
+
+      <!-- <button onclick="togglePlay()">Reproduzir/Pausar</button> -->
+
     <div class="game-board">
+        <audio id="myAudio" autoplay loop>
+            <source src="./audio/principal.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+          </audio>
         <img src="./images/clouds.png" class="clouds">
         <img src="./images/mario.gif" class="mario">
         <img src="./images/pipe.png" class="pipe">
         
+        <div class="kariny">
+            <img src="./images/Over.png" class="over">
+            <img src="./images/restart.png" class="botao" onclick="refreshPage()">   
+        </div>
         <img src="./images/Over.png" class="over">
-        
-        <button onclick="refreshPage()" class="botao">Refresh</button>
+        <img src="./images/restart.png" class="botao" onclick="refreshPage()">
+        <!-- <button onclick="refreshPage()" class="botao">Refresh</button> -->
     </div>
 
     <script src="./Ts/script.js"></script>

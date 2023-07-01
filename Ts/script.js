@@ -20,7 +20,15 @@ const jump = () => {
 
 
 
+var audio = document.getElementById('myAudio');
+var firstSpacePress = true;
 
+document.addEventListener('keydown', function(event) {
+  if (event.code === 'Space' && firstSpacePress) {
+    audio.play();
+    firstSpacePress = false;
+  }
+});
 
 
 const loop = setInterval(() => {
@@ -31,13 +39,6 @@ const loop = setInterval(() => {
 
     const marioPosition = parseFloat(window.getComputedStyle(mario).bottom.replace('px', ''));
 
-    /* if(pipePosition >= 180 && pipePosition <= 190){
-        mario.classList.add('jump');
-        setTimeout(()=> {
-            mario.classList.remove('jump');
-        }, 500); 
-        console.log("entrou");
-    } */
     
     if(pipePosition <= 120 && marioPosition < 80 && pipePosition > 0){
      
@@ -52,8 +53,9 @@ const loop = setInterval(() => {
         mario.src = './images/game-over.png';
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
-        over.style.display = 'block';
-        botao.style.display = 'block';
+        over.style.display = 'flex';
+        botao.style.display = 'flex';
+        audio.pause();
 
         clearInterval(loop);
     }
@@ -66,4 +68,8 @@ function refreshPage() {
     location.reload();
   }
 
-document.addEventListener('keydown', jump);
+  document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+      jump();
+    }
+  });

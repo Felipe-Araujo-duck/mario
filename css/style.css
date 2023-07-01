@@ -32,28 +32,33 @@
     animation: jump 500ms ease-out;
 }
 
-.over{
+#audio-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  #audio-container audio {
+    width: 300px;
+  }
+
+.kariny{
     position: absolute;
-    left: 37%;
-    bottom: 30%;
+    left:35%;
+    bottom: 40%;
+}
+.over{
     display: none;
 }
 
 .botao{
-    position: absolute;
-    left: 48%;
-    bottom: 120px;
-    background-color: #ff0000;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
     cursor: pointer;
     display: none;
 }
 
 .botao:hover{
-    background-color: #cc0000;
+    width: 350px;
 }
 
 
